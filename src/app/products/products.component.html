@@ -1,0 +1,17 @@
+{{store.storeId}}
+
+
+<div class="button-container">
+    <button class="button-display" [ngClass]="{'active' : showPriceChangeComponent }" (click)="showPriceChange()">Price
+        Change</button>
+    <button class="button-display" [ngClass]="{'active' : showNewProductComponent }" (click)="showNewProduct()">New
+        Product</button>
+</div>
+
+<div *ngIf="showPriceChangeComponent">
+    <app-price-change-product [store]="store.storeId"></app-price-change-product>
+</div>
+
+<div *ngIf="showNewProductComponent">
+    <app-new-product [store]="store.storeId"></app-new-product>
+</div>

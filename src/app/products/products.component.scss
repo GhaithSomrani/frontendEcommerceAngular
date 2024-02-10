@@ -1,0 +1,25 @@
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .button-display {
+        width: 30%;
+        height: 50px;
+        background-color: #08D9D6;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #FF2E63;
+        }
+
+        &.active {
+            background-color: #FF2E63;
+
+        }
+    }
+}

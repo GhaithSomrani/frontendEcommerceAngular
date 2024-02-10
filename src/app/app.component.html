@@ -1,0 +1,13 @@
+<h1> test </h1>
+<div class="storelist">
+    <div class="storecard" *ngFor="let store of stores" [ngClass]="{ 'active': isRouteActive('/store/' + store.name) }">
+        <div class="store">
+            <a routerLink="/store/{{store.name}}">
+                <div class="storeimage"><img src="{{store.image}}" alt="{{store.name}}" srcset=""></div>
+                <div class="storename">{{store.name}}</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

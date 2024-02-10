@@ -1,0 +1,53 @@
+<div class="filter-block">
+    <ng-select [items]="brands" class="select-filter" [searchable]="true" [multiple]="false" [(ngModel)]="selectedBrand"
+        (change)="onBrandChange()">
+        <ng-template ng-label-tmp let-item="item">
+            <span>{{ item || 'Select Brand' }}</span>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item">
+            {{ item }}
+        </ng-template>
+    </ng-select>
+
+    <ng-select [items]="categories" class="select-filter" [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+        <ng-template ng-label-tmp let-item="item">
+            <span>{{ item || 'Select Category' }}</span>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item">
+            {{ item }}
+        </ng-template>
+    </ng-select>
+    <div id="date">
+        <input class="input-box" type="date" id="date_end" [(ngModel)]="endDate" (change)="onDateChange()">
+    </div>
+</div>
+
+
+
+<div class="table-product">
+    <div class="table-header-product">
+        <div class="table-header-text">image</div>
+        <div class="table-header-text">reference</div>
+        <div class="table-header-text">name</div>
+        <div class="table-header-text">category</div>
+        <div class="table-header-text">brand</div>
+        <div class="table-header-text">price</div>
+    </div>
+    <div class="table-body-product">
+        <div class="table-body-product-row" *ngFor="let product of products">
+            <img class="table-body-product-text image-product" [src]="product.imageurl" alt="" srcset="">
+            <div class="table-body-product-text">{{ product.reference }}</div>
+            <div class="table-body-product-text"> <a href="{{product.url}}">{{product.name}}</a></div>
+            <div class="table-body-product-text">{{ product.category }}</div>
+            <div class="table-body-product-text">{{ product.brand }}</div>
+            <div class="table-body-product-text">
+                <span>NEW price : {{ product.prices[0].value }} TND</span>
+                <span>OLD price : {{ product.prices[1].value }} TND</span>
+                <span class="subtraction"
+                    [ngClass]="{'reddown': product.prices[0].value - product.prices[1].value < 0, 'greenup': product.prices[0].value - product.prices[1].value > 0}">
+                    {{ product.prices[0].value - product.prices[1].value }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
