@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        <th>reference</th>
+        <th>store</th>
+        <th>Reference</th>
+        <th>Name</th>
+        <!-- Add other table headers based on your product model -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.reference }}</td>
+        <td>{{ product.store }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.name }}</td>
+        <!-- Add other table cells based on your product model -->
+      </tr>
+    </tbody>
+  </table>

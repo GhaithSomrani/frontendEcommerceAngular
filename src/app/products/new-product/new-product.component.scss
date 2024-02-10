@@ -1,0 +1,119 @@
+.table-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    .table-header-product {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: black;
+        align-items: center;
+
+        .table-header-text {
+            width: 16%;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    .table-body-product {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1%;
+
+        .table-body-product-row {
+            width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .table-body-product-text {
+                width: 16%;
+                text-align: center;
+display: flex;
+flex-direction: column;
+
+
+                .subtraction {
+                    color: white;
+                    padding: 10px 20px;
+
+                    &.reddown {
+                        background-color: red;
+                    }
+
+                    &.greenup {
+                        background-color: green;
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+.filter-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1%;
+    margin: 3%;
+
+    .input-box {
+        text-align: center;
+        align-items: center;
+        background-color: #fff;
+    }
+
+    div::ng-deep .ng-select .ng-select-container {
+        height: 50px;
+        align-items: center;
+    }
+
+    .ng-select {
+        height: 50px;
+    }
+
+    .ng-select-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .ng-select-container span {
+        font-size: 16px;
+
+    }
+
+    .select-filter {
+        z-index: 9999;
+        height: 50px;
+        background-color: #fff;
+        width: 200px;
+
+        ::ng-deep {
+            .ng-placeholder {
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .ng-dropdown-panel-items.scroll-host {
+                background: #ffffff;
+            }
+
+            .ng-select .ng-select-container .ng-value-container {
+                height: 50px;
+                align-items: center;
+                display: flex;
+                flex: 1;
+            }
+        }
+    }
+}
